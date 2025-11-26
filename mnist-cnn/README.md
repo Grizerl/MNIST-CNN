@@ -4,6 +4,7 @@
 
 ## 📂 Структура проєкту
 
+```
 mnist-cnn/
 ├─ venv/                 ← Віртуальне середовище Python
 ├─ src/
@@ -12,6 +13,7 @@ mnist-cnn/
 ├─ mnist_cnn_model.h5    ← Збережена навчена модель
 ├─ README.md             ← Опис проєкту
 ├─ requirements.txt      ← Список бібліотек для проєкту
+```
 
 ## ⚙️ Встановлення та запуск
 
@@ -22,12 +24,17 @@ mnist-cnn/
 ```powershell
 python -m venv venv
 .\venv\Scripts\Activate.ps1  # для PowerShell
+```
 
 3. Встановити бібліотеки з requirements.txt:
 
-`pip install -r requirements.txt`
+```
+pip install -r requirements.txt
+```
 
 4. Перейти в папку src та запустити нейромережу:
 
-`cd src`
-`python main.py`
+```
+cd src
+python main.py
+```
