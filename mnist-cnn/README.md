@@ -25,11 +25,21 @@ mnist-cnn/
 python -m venv venv
 .\venv\Scripts\Activate.ps1  # для PowerShell
 ```
+Якщо з’являється помилка про Execution Policy, дозволяємо скрипти:
 
+```
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+```
 3. Встановити бібліотеки з requirements.txt:
 
 ```
 pip install -r requirements.txt
+```
+
+Або вручну:
+
+```
+pip install tensorflow numpy matplotlib
 ```
 
 4. Перейти в папку src та запустити нейромережу:
