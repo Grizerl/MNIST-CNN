@@ -4,14 +4,11 @@ from tensorflow import keras # type: ignore
 from model import build_cnn
 
 def load_data():
-    # Завантажуємо MNIST
     (x_train, y_train), (x_test, y_test) = keras.datasets.mnist.load_data()
 
-    # Нормалізація
     x_train = x_train.astype("float32") / 255.0
     x_test  = x_test.astype("float32") / 255.0
 
-    # Додаємо канал (28x28x1)
     x_train = np.expand_dims(x_train, -1)
     x_test  = np.expand_dims(x_test, -1)
 
@@ -29,7 +26,6 @@ def main():
 
     model.summary()
 
-    # Навчання
     model.fit(
         x_train, y_train,
         epochs=5,
@@ -37,10 +33,8 @@ def main():
         validation_split=0.1
     )
 
-    # Збереження моделі
     model.save("mnist_cnn_model.h5")
 
-    # Оцінка на тесті
     loss, acc = model.evaluate(x_test, y_test)
     print(f"\nTest accuracy: {acc:.4f}")
 
